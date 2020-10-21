@@ -1,0 +1,37 @@
+{
+    "name": "MicrosoftTeams",
+    "type": "executer",
+    "description": "",
+    "execProgram": "node",
+    "main": "app.js",
+    "version": "1.0.0",
+    "imgUrl": "icon.png",
+    "methods": [
+        {
+            "name": "createIncident",
+            "viewName": "Create Incident",
+            "params": [
+                {
+                    "name": "URL",
+                    "viewName": "URL",
+                    "type": "string"
+                },
+                {
+                    "name": "BODY",
+                    "viewName": "Incident info (string, object)",
+                    "type": "string"
+                },
+                {
+                    "name": "USER",
+                    "viewName": "User",
+                    "type": "string"
+                },
+                {
+                    "name": "PASSWORD",
+                    "viewName": "Password",
+                    "type": "vault"
+                }
+            ]
+        }
+    ]
+}
