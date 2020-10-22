@@ -34,15 +34,6 @@ async function genericRestAPI(action,settings, bodyData, method) {
     return JSON.parse(await response.text());
 }
 
-var action = {
-    params : {
-        URL: "https://dev74899.service-now.com",
-        USER: "admin",
-        PASSWORD: "UbEfmxC54vLL",
-        BODY: "{\"active\":\"true\",\"short_description\":\"created by Kaholo Plugin\",\"caller_id\":\"John Snow\"}"
-    }
-}
-createIncident(action)
 module.exports = {
     createIncident: createIncident
 }
