@@ -1,7 +1,7 @@
 {
     "name": "servicenow",
     "type": "executer",
-    "description": "",
+    "description": "Kaholo Plugin for servicenow",
     "execProgram": "node",
     "main": "app.js",
     "version": "1.0.0",
