@@ -1,5 +1,5 @@
 {
-    "name": "servicenow",
+    "name": "ServiceNow",
     "type": "executer",
     "description": "Kaholo Plugin for servicenow",
     "execProgram": "node",
