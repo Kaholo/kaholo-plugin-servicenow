@@ -2,36 +2,35 @@ const fetch = require('node-fetch');
 const btoa = require('btoa')
 
 async function createIncident (action, settings) {
-    /**
-     * Set status of version to released inside a given project.
-     */
-    var bodyData = action.params.BODY;
-    if(typeof action.params.BODY != 'string'){
-        bodyData = JSON.stringify(action.params.BODY)
+    let bodyData = (action.params.BODY || "").trim();
+    if (typeof bodyData !== 'string'){
+        bodyData = JSON.stringify(bodyData)
     }
-    const method = "POST"
-    return await genericRestAPI(action,settings, bodyData,method)
+    return genericRestAPI(action, settings, bodyData, "POST");
 }
 
-async function genericRestAPI(action,settings, bodyData, method) {
+async function genericRestAPI(action, settings, bodyData, method) {
     /**
      * Send Default API Request
      */    
-    
-    const host = action.params.URL + "/api/now/table/incident";
+    const url = action.params.URL || settings.URL;
+    const user = action.params.USER || settings.USER;
+    const pass = action.params.PASSWORD || settings.PASSWORD;
+
+    const host =  `${url}/api/now/table/incident`;
     const response = await fetch(host,  {
         method: `${method}`,
         headers: {
-          'Authorization': 'Basic '+btoa(`${action.params.USER}:${action.params.PASSWORD}`),
+          'Authorization': 'Basic '+btoa(`${user}:${pass}`),
              'Accept': 'application/json',
               'Content-Type': 'application/json'
         },
         body: bodyData
     })
-    if ( response.status < 200 || response.status > 299) {
+    if (response.status < 200 || response.status > 299) {
         throw response
     }
-    return JSON.parse(await response.text());
+    return response.json();
 }
 
 module.exports = {

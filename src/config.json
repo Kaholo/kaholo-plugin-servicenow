@@ -4,8 +4,25 @@
     "description": "Kaholo Plugin for servicenow",
     "execProgram": "node",
     "main": "app.js",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "imgUrl": "icon.png",
+    "settings": [
+        {
+            "name": "URL",
+            "viewName": "URL",
+            "type": "string"
+        },
+        {
+            "name": "USER",
+            "viewName": "User",
+            "type": "string"
+        },
+        {
+            "name": "PASSWORD",
+            "viewName": "Password",
+            "type": "vault"
+        }
+    ],
     "methods": [
         {
             "name": "createIncident",

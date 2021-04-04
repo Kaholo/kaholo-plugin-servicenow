@@ -1,6 +1,6 @@
 {
   "name": "kaholo-plugin-servicenow",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Kaholo plugin for service-now REST API",
   "main": "app.js",
   "scripts": {
