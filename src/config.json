@@ -1,54 +1,55 @@
 {
-    "name": "ServiceNow",
-    "type": "executer",
-    "description": "Kaholo Plugin for servicenow",
-    "execProgram": "node",
-    "main": "app.js",
-    "version": "1.0.1",
-    "imgUrl": "icon.png",
-    "settings": [
+  "name": "ServiceNow",
+  "type": "executer",
+  "description": "Kaholo Plugin for servicenow",
+  "execProgram": "node",
+  "main": "app.js",
+  "version": "1.0.3",
+  "imgUrl": "icon.png",
+  "settings": [
+    {
+      "name": "URL",
+      "viewName": "URL",
+      "type": "string"
+    },
+    {
+      "name": "USER",
+      "viewName": "User",
+      "type": "string"
+    },
+    {
+      "name": "PASSWORD",
+      "viewName": "Password",
+      "type": "vault"
+    }
+  ],
+  "methods": [
+    {
+      "name": "createIncident",
+      "viewName": "Create Incident",
+      "params": [
         {
-            "name": "URL",
-            "viewName": "URL",
-            "type": "string"
+          "name": "URL",
+          "viewName": "URL",
+          "type": "string"
         },
         {
-            "name": "USER",
-            "viewName": "User",
-            "type": "string"
+          "name": "BODY",
+          "viewName": "Incident info (string, object)",
+          "type": "string"
         },
         {
-            "name": "PASSWORD",
-            "viewName": "Password",
-            "type": "vault"
-        }
-    ],
-    "methods": [
+          "name": "USER",
+          "viewName": "User",
+          "type": "string"
+        },
         {
-            "name": "createIncident",
-            "viewName": "Create Incident",
-            "params": [
-                {
-                    "name": "URL",
-                    "viewName": "URL",
-                    "type": "string"
-                },
-                {
-                    "name": "BODY",
-                    "viewName": "Incident info (string, object)",
-                    "type": "string"
-                },
-                {
-                    "name": "USER",
-                    "viewName": "User",
-                    "type": "string"
-                },
-                {
-                    "name": "PASSWORD",
-                    "viewName": "Password",
-                    "type": "vault"
-                }
-            ]
+          "name": "PASSWORD",
+          "viewName": "Password",
+          "type": "vault"
         }
-    ]
+      ]
+    }
+  ],
+  "category": "ISSUE TRACKING"
 }
